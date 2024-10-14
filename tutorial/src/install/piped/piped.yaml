@@ -1,0 +1,46 @@
+# This is a configuration for running a Piped. See https://pipecd.dev/docs/user-guide/managing-piped/configuration-reference/ for details.
+apiVersion: pipecd.dev/v1beta1
+kind: Piped
+spec:
+  apiAddress: localhost:8080
+  projectID: tutorial
+  pipedID: 791a677d-ef2c-403e-bafc-5aeed2dc90e2
+  # pipedKeyFile: /Users/subaru/development/parse-check/tutorial/src/install/piped/piped.yaml
+  pipedKeyData: Z3E1cGxpMjh6cXc0Z29odjM4bGE4NGZueDVnMHZ5dHVuM2d5MHU0Z2U4bHR0MHQwYnI=
+  repositories:
+    - repoID: first-piped
+      remote: https://github.com/subaru-hello/React-Pipecd.git # [EDIT_HERE] The HTTPS URL of your repository.
+      branch: main
+  syncInterval: 15s
+  platformProviders:
+    # [EDIT_HERE] Uncomment one of followings:
+    
+    ## [1] Kubernetes
+    # - name: my-kubernetes
+    #   type: KUBERNETES
+    #   config:
+    #     kubeconfigPath: <YOUR_KUBECONFIG_PATH> # Your piped will connect to your cluster with this config.
+
+    ## [2] Google Cloud > Cloud Run
+    # - name: my-cloudrun
+    #   type: CLOUDRUN
+    #   config:
+    #     project: <YOUR_GOOGLE_CLOUD_PROJECT> # [EDIT_HERE]
+    #     region: <YOUR_GOOGLE_GLOUD_REGION> # [EDIT_HERE]
+
+    # [3] AWS > ECS
+    - name: my-ecs
+      type: ECS
+      config:
+        region: ap-northeast-1
+        profile: default # Name of your AWS credentials profile.
+    ## [4] AWS > Lambda
+    # - name: my-lambda
+    #   type: LAMBDA
+    #   config:
+    #     region:  <YOUR_AWS_REGION>  # [EDIT_HERE] e.g. ap-northeast-1
+    #     profile: default # Name of your AWS credentials profile.
+
+    ## [5] Terraform
+    # - name: my-terraform
+    #   type: TERRAFORM
