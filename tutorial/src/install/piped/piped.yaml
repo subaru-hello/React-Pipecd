@@ -9,7 +9,7 @@ spec:
   pipedKeyData: Z3E1cGxpMjh6cXc0Z29odjM4bGE4NGZueDVnMHZ5dHVuM2d5MHU0Z2U4bHR0MHQwYnI=
   repositories:
     - repoID: first-piped
-      remote: https://github.com/subaru-hello/React-Pipecd.git # [EDIT_HERE] The HTTPS URL of your repository.
+      remote: https://github.com/subaru-hello/React-Pipecd.git
       branch: main
   syncInterval: 15s
   platformProviders:
