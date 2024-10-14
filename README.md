@@ -1,7 +1,5 @@
 # React-PipeCD 
-https://dev.classmethod.jp/articles/getting-started-pipecd/
+https://zenn.dev/cadp/articles/piped-on-ecs?redirected=1
 
 
-kubectl version --client
-Client Version: v1.31.1
-Kustomize Version: v5.4.2
+https://github.com/pipe-cd/tutorial/tree/main/content/ja/30-install
